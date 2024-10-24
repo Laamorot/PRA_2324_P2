@@ -26,7 +26,6 @@ void QuickSort (std::vector<T> &vec, int ini, int fin){
 	QuickSort(vec ini, pivot-1);
 	QuickSort(vec, pivot+1, fin);
 	}
-	
 }
 
 template <typename T>
@@ -42,8 +41,8 @@ int Partition (std::vector<T> &vec, int ini, int fin){
 		}
 	}
 	T aux = vec[j];
-        vec[j] = vec[i];                        
+	//swap
+    vec[j] = vec[i];                        
 	vec[i] = aux;
-
 	return i;
 }
