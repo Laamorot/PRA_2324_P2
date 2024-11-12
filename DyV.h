@@ -3,6 +3,13 @@
 #include <cstdio>
 #include <algorithm>
 
+template <typename T>
+void swap (std::vector<T> &vec, int i, int j){
+	T aux = vec[j];
+    vec[j] = vec[i];                        
+	vec[i] = aux;
+}
+
 template <typename T> T BusquedaBinaria (T x, std::vector<T> vec, int ini, int fin){
 	if( ini > fin){
 		printf("Valor no encontrado en el vector\n");
@@ -40,9 +47,6 @@ int Partition (std::vector<T> &vec, int ini, int fin){
 			i += 1;
 		}
 	}
-	T aux = vec[j];
-	//swap
-    vec[j] = vec[i];                        
-	vec[i] = aux;
+	swap(vec, i, fin); //swap 
 	return i;
 }
